@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "9DB0FE64-0C3C-4B3A-866D-B9F31A649053"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1DEC53AC-B9ED-442E-A971-DC0B6088873A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PeterStreaming/Infornation.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "Infornation"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "1DEC53AC-B9ED-442E-A971-DC0B6088873A - 1a5ef20d6f3290ab"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PeterStreaming.Infornation.picker.getter : __C.UIImagePickerController"
+                  moduleName = "PeterStreaming"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/class/Desktop/PeterStreaming/PeterStreaming/Infornation.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "94">
+               </Location>
+               <Location
+                  uuid = "1DEC53AC-B9ED-442E-A971-DC0B6088873A - 48c9ee184e61fbdf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PeterStreaming.Infornation.picker.setter : __C.UIImagePickerController"
+                  moduleName = "PeterStreaming"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/class/Desktop/PeterStreaming/PeterStreaming/Infornation.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "132">
+               </Location>
+               <Location
+                  uuid = "1DEC53AC-B9ED-442E-A971-DC0B6088873A - 9de0fded8b8e3aee"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PeterStreaming.Infornation.picker.modify : __C.UIImagePickerController"
+                  moduleName = "PeterStreaming"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/class/Desktop/PeterStreaming/PeterStreaming/Infornation.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "1DEC53AC-B9ED-442E-A971-DC0B6088873A - 56e919e436c93a45"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PeterStreaming.Infornation.picker.modify : __C.UIImagePickerController with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "PeterStreaming"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/class/Desktop/PeterStreaming/PeterStreaming/Infornation.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "15">
+               </Location>
+               <Location
+                  uuid = "1DEC53AC-B9ED-442E-A971-DC0B6088873A - 9ea0d2b81e2b1125"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PeterStreaming.Infornation.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; PeterStreaming.Infornation"
+                  moduleName = "PeterStreaming"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/class/Desktop/PeterStreaming/PeterStreaming/Infornation.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "114">
+               </Location>
+               <Location
+                  uuid = "1DEC53AC-B9ED-442E-A971-DC0B6088873A - 82a01a206b6ab084"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PeterStreaming.Infornation.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;PeterStreaming.Infornation&gt;"
+                  moduleName = "PeterStreaming"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/class/Desktop/PeterStreaming/PeterStreaming/Infornation.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "71">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A3081332-A2BF-4F1A-88BE-890DC07CA1E7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PeterStreaming/JSViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3F9864D9-0464-4A3A-B8D7-CD87776FBABA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PeterStreaming/&#x641c;&#x5c0b;/HeaderView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "7"
+            endingLineNumber = "7"
+            landmarkName = "HeaderView"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
