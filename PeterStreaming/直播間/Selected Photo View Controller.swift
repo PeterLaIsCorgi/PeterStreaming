@@ -22,7 +22,6 @@ class Selected_Photo_View_Controller: UIViewController,URLSessionWebSocketDelega
         super.viewDidLoad()
         
         let session = URLSession(configuration: .default, delegate: self, delegateQueue: OperationQueue())
-        
         let url = URL(string: "wss://client-dev.lottcube.asia/ws/chat/chat:app_test?nickname=peter")
         webSocket = session.webSocketTask(with: url!)
         webSocket?.resume()
@@ -32,8 +31,8 @@ class Selected_Photo_View_Controller: UIViewController,URLSessionWebSocketDelega
         tabview.dataSource = self
         
     }
+   
     
-
     
     
     func ping() {
@@ -48,17 +47,6 @@ class Selected_Photo_View_Controller: UIViewController,URLSessionWebSocketDelega
         webSocket?.cancel(with: .goingAway, reason: "Demo ended".data(using: .utf8))
     }
     
-//    func send() {
-//        DispatchQueue.global().asyncAfter(deadline: .now()+1) {
-//            self.send()
-//            self.webSocket?.send(.string("Send new message:")) { error in
-//                if let error = error {
-//                    print("Send error: \(error)")
-//                }
-//            }
-//        }
-//    }
-    
     func receive() {
         webSocket?.receive{ reslt in
             switch reslt {
@@ -68,7 +56,7 @@ class Selected_Photo_View_Controller: UIViewController,URLSessionWebSocketDelega
                     print("Got Data: \(data)")
                 case .string(let message):
                     print("Got String: \(message)")
-                        
+                    
                     //建立解碼器
                     let decoder = JSONDecoder()
                     //JSON字串轉Data
@@ -97,7 +85,7 @@ class Selected_Photo_View_Controller: UIViewController,URLSessionWebSocketDelega
                                 }
                                 let newString = "\(myNickName!):\(myText!)"
                                 self.chatArray.append(newString)
-
+                                
                                 DispatchQueue.main.async {
                                     self.tabview.reloadData()
                                 }
@@ -116,7 +104,7 @@ class Selected_Photo_View_Controller: UIViewController,URLSessionWebSocketDelega
                                 let newUpade = "\(myUsername):\(myEnter)"
                                 
                                 self.chatArray.append(newUpade)
-//                                print("charArray的數量：\(self.chatArray.count)")
+                                //                                print("charArray的數量：\(self.chatArray.count)")
                                 DispatchQueue.main.async {
                                     self.tabview.reloadData()
                                 }
@@ -124,15 +112,15 @@ class Selected_Photo_View_Controller: UIViewController,URLSessionWebSocketDelega
                             //系統廣播
                             if myEvent == "admin_all_broadcast" {
                                 guard
-                                let mySender = getCodable.sender_role,
-                                let myContent = getCodable.body?.content?.tw
+                                    let mySender = getCodable.sender_role,
+                                    let myContent = getCodable.body?.content?.tw
                                 else {
                                     print("admin_all_broadcast中有nil")
                                     return
                                 }
                                 let newBroadcast = "\(mySender):\(myContent)"
                                 self.chatArray.append(newBroadcast)
-//                                print("charArray的數量：\(self.chatArray.count)")
+                                //                                print("charArray的數量：\(self.chatArray.count)")
                                 DispatchQueue.main.async {
                                     self.tabview.reloadData()
                                 }
@@ -151,20 +139,11 @@ class Selected_Photo_View_Controller: UIViewController,URLSessionWebSocketDelega
             self.receive()
         }
     }
-    
+    //傳送文字
     @IBAction func sendButton(_ sender: Any) {
         var sendTextButton = chat.text ?? ""
         sendServer(str: sendTextButton)
-//        if sendTextButton.trimmingCharacters(in: .whitespaces) == "" {
-//            print("empty")
-//        }
-//        else{
-//            chatArray.append(sendTextButton)
-//            chatText.append(IDname)
-//            chat.text = nil
-//            self.tabview.reloadData()
-//            print(chatText)
-//        }
+        chat.text = ""
     }
     
     func sendMessage(_ wSsendText:String) {
@@ -173,7 +152,7 @@ class Selected_Photo_View_Controller: UIViewController,URLSessionWebSocketDelega
             if let error = error {
                 print(error)
             }
-    }
+        }
     }
     
     func sendServer(str:String){
@@ -199,8 +178,6 @@ class Selected_Photo_View_Controller: UIViewController,URLSessionWebSocketDelega
     }
     
     func urlSession(_ session: URLSession, webSocketTask: URLSessionWebSocketTask, didOpenWithProtocol protocol: String?) {
-        print("Did connect to socket")
-//        ping()
         receive()
     }
     
@@ -211,7 +188,6 @@ class Selected_Photo_View_Controller: UIViewController,URLSessionWebSocketDelega
     //影片播放
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //        setupView()
         setUpVideo()
     }
     func setUpVideo() {
@@ -234,6 +210,29 @@ class Selected_Photo_View_Controller: UIViewController,URLSessionWebSocketDelega
         videoPlayer.play()
         
     }
+    //    override func viewWillAppear(_ animated: Bool) {
+    //        super.viewWillAppear(animated)
+    //        stopVideo()
+    //    }
+    
+    func stopVideo() {
+        
+        let bundlePath = Bundle.main.path(forResource: "hime3", ofType: "mp4")
+        
+        let  movieurl = URL(fileURLWithPath: bundlePath!)
+        
+        let item = AVPlayerItem(url: movieurl)
+        let videoPlayer = AVQueuePlayer()
+        var videoPlayerLayer:AVPlayerLayer?
+        
+        looper = AVPlayerLooper(player: videoPlayer, templateItem: item)
+        
+        videoPlayerLayer = AVPlayerLayer(player: videoPlayer)
+        
+        videoPlayerLayer?.frame = CGRect(x: -self.view.frame.size.width*1.5, y: 0, width: self.view.frame.size.width*4, height: self.view.frame.size.height)
+        view.layer.insertSublayer(videoPlayerLayer!, at: 0)
+        videoPlayer.pause()
+    }
     
     
     @IBAction func leave(_ sender: Any) {
@@ -246,12 +245,14 @@ class Selected_Photo_View_Controller: UIViewController,URLSessionWebSocketDelega
         // 加入取消的動作。
         let cancelAction = UIAlertAction(title: "取消", style: .cancel)
         alertController.addAction(cancelAction)
+        setUpVideo()
         // 加入確定的動作。
         let yesAction = UIAlertAction(title: "確定", style: .destructive) { _ in
             self.dismiss(animated: true)
         }
         alertController.addAction(yesAction)
         // 呈現 alertController。
+        stopVideo()
         present(alertController, animated: true)
     }
     
