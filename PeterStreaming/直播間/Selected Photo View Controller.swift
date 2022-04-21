@@ -9,6 +9,8 @@ class Selected_Photo_View_Controller: UIViewController,URLSessionWebSocketDelega
     var looper: AVPlayerLooper?
     var movieController:AVPlayerViewController?
     
+    var ChatView: CGRect?
+    
     var chatArray = [String]()
     var chatText = [String]()
     var IDname = "訪客"
@@ -16,7 +18,10 @@ class Selected_Photo_View_Controller: UIViewController,URLSessionWebSocketDelega
     @IBOutlet weak var chat: UITextField!
     @IBOutlet weak var tabview: UITableView!
     
-    
+    // 畫面將顯示時監控鍵盤開闔狀態
+    override func viewWillAppear(_ animated: Bool) {
+        addKeyboardObserver()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +34,39 @@ class Selected_Photo_View_Controller: UIViewController,URLSessionWebSocketDelega
         tabview.transform = CGAffineTransform(rotationAngle: .pi)
         tabview.delegate = self
         tabview.dataSource = self
+        tabview.allowsSelection = false
         
     }
-   
     
+    func addKeyboardObserver() {
+        // 因為selector寫法只要指定方法名稱即可，參數則是已經定義好的NSNotification物件，所以不指定參數的寫法「#selector(keyboardWillShow)」也可以
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
     
+    @objc func keyboardWillShow(notification: Notification) {
+        // 能取得鍵盤高度就讓view上移鍵盤高度，否則上移view的1/3高度
+        if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRect = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRect.height
+            view.frame.origin.y = -keyboardHeight
+        } else {
+            view.frame.origin.y = -view.frame.height / 3
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: Notification) {
+        // 讓view回復原位
+        view.frame.origin.y = 0
+    }
+    
+    // 當畫面消失時取消監控鍵盤開闔狀態
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+
     
     func ping() {
         webSocket?.sendPing { error in
@@ -210,10 +243,6 @@ class Selected_Photo_View_Controller: UIViewController,URLSessionWebSocketDelega
         videoPlayer.play()
         
     }
-    //    override func viewWillAppear(_ animated: Bool) {
-    //        super.viewWillAppear(animated)
-    //        stopVideo()
-    //    }
     
     func stopVideo() {
         
