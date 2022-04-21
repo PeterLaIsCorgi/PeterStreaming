@@ -36,6 +36,7 @@
 		4BD164582806A03200EE416D /* searchJSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD164572806A03200EE416D /* searchJSViewController.swift */; };
 		4BD4BBD428040B3100A16AA2 /* hime3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4BD4BBD328040B3100A16AA2 /* hime3.mp4 */; };
 		4BE5C4CF27FFC5B100793AF7 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE5C4CE27FFC5B100793AF7 /* Profile.swift */; };
+		4BE84D522810FB0C0005780C /* MyCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE84D512810FB0C0005780C /* MyCollectionReusableView.swift */; };
 		4BEA79862805046B00FB82CA /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEA79852805046B00FB82CA /* HomeCollectionViewCell.swift */; };
 		4BFBE80A280D5D4500CC2582 /* Jsonchat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFBE809280D5D4500CC2582 /* Jsonchat.swift */; };
 		4BFEF32227FD88EF0082B772 /* send@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BFEF2FC27FD88EF0082B772 /* send@3x.png */; };
@@ -101,6 +102,7 @@
 		4BD164572806A03200EE416D /* searchJSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchJSViewController.swift; sourceTree = "<group>"; };
 		4BD4BBD328040B3100A16AA2 /* hime3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = hime3.mp4; sourceTree = "<group>"; };
 		4BE5C4CE27FFC5B100793AF7 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		4BE84D512810FB0C0005780C /* MyCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionReusableView.swift; sourceTree = "<group>"; };
 		4BEA79852805046B00FB82CA /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		4BFBE809280D5D4500CC2582 /* Jsonchat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jsonchat.swift; sourceTree = "<group>"; };
 		4BFEF2FC27FD88EF0082B772 /* send@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "send@3x.png"; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 			children = (
 				4BD164572806A03200EE416D /* searchJSViewController.swift */,
 				4BD1645528069FDE00EE416D /* searchCollectionViewCell.swift */,
+				4BE84D512810FB0C0005780C /* MyCollectionReusableView.swift */,
 			);
 			path = "搜尋";
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				4B2ED6AD280DB3F000D6B3F1 /* TableViewCell.swift in Sources */,
 				4B6F9F3327F3FB4000381238 /* AppDelegate.swift in Sources */,
 				4B6F9F5227F43EFF00381238 /* SignUpViewController.swift in Sources */,
+				4BE84D522810FB0C0005780C /* MyCollectionReusableView.swift in Sources */,
 				4B41A28827F456600012C9AE /* LoginViewController.swift in Sources */,
 				4B6F9F3527F3FB4000381238 /* SceneDelegate.swift in Sources */,
 				4BD164582806A03200EE416D /* searchJSViewController.swift in Sources */,

@@ -318,13 +318,13 @@
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="7Gt-EZ-HAv">
                                     <size key="itemSize" width="180" height="169"/>
                                     <size key="estimatedItemSize" width="180" height="169"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="searchimagecell" id="2v8-xt-RzH" userLabel="searchimagecell" customClass="searchCollectionViewCell" customModule="PeterStreaming" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="180" height="169"/>
+                                        <rect key="frame" x="0.0" y="50" width="180" height="169"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="IF7-6g-MNc">
                                             <rect key="frame" x="0.0" y="0.0" width="180" height="169"/>
@@ -387,6 +387,30 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="headerCell" id="CQ6-cU-tsf" customClass="MyCollectionReusableView" customModule="PeterStreaming" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bp7-jQ-pFc">
+                                            <rect key="frame" x="28" y="13" width="59" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" id="BPs-He-OOL"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Bp7-jQ-pFc" secondAttribute="bottom" constant="5" id="1Pi-oe-rvv"/>
+                                        <constraint firstItem="Bp7-jQ-pFc" firstAttribute="leading" secondItem="CQ6-cU-tsf" secondAttribute="leadingMargin" constant="20" id="8gc-cD-NGG"/>
+                                        <constraint firstItem="Bp7-jQ-pFc" firstAttribute="top" secondItem="CQ6-cU-tsf" secondAttribute="topMargin" constant="5" id="iv1-QV-bUe"/>
+                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Bp7-jQ-pFc" secondAttribute="trailing" id="quN-Dn-2pO"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="myHeaderLabel" destination="Bp7-jQ-pFc" id="cDs-bq-Z7S"/>
+                                    </connections>
+                                </collectionReusableView>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3lj-Ke-6Xa"/>
@@ -830,7 +854,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="bEA-o3-TbJ"/>
+        <segue reference="ppR-CE-WDZ"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="btnEdit" width="41" height="41"/>

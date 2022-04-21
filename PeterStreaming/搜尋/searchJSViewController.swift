@@ -142,7 +142,7 @@ extension searchJSViewController: UICollectionViewDelegate,UICollectionViewDataS
     }
         return cell
 }
-    
+    //動態搜尋
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
             searcheditem.removeAll()
@@ -163,27 +163,27 @@ extension searchJSViewController: UICollectionViewDelegate,UICollectionViewDataS
         CollectionView.reloadData()
     }
     
+    //Header文字
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
-        var reusableView = UICollectionReusableView()
+        let myHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCell", for: indexPath) as! MyCollectionReusableView
         
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: fullSize.width, height: 40))
-            label.textAlignment = .center
-        
-        if kind == UICollectionView.elementKindSectionHeader {
-              // header
-              reusableView = collectionView.dequeueReusableSupplementaryView(
-                ofKind: UICollectionView.elementKindSectionHeader,
-                  withReuseIdentifier: "Header",
-                  for: indexPath)
-              
-              //header content
-              reusableView.backgroundColor = UIColor.darkGray
-              label.text = "熱門搜尋"
-              label.textColor = UIColor.black
+        switch searcheditem.count {
+        case 0 :
+            myHeader.myHeaderLabel.text = "熱門推薦"
+            return myHeader
+        default:
+            if indexPath.section == 0 {
+                myHeader.myHeaderLabel.text = "搜尋結果"
+                return myHeader
+            }else if indexPath.section == 1 {
+                myHeader.myHeaderLabel.text = "熱門推薦"
+                return myHeader
+            }else{
+                return myHeader
+            }
         }
-        reusableView.addSubview(label)
-        return reusableView
+        
     }
 }
 
